@@ -11,6 +11,8 @@
 
 namespace App\Telegram\InlineMenu;
 
+use App\Telegram\InlineButtons\InstallClass;
+use App\Telegram\InlineButtons\LaravelClass;
 use SergiX44\Nutgram\Conversations\InlineMenu;
 use SergiX44\Nutgram\Nutgram;
 use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardButton;
@@ -33,16 +35,8 @@ class IntroductionClass extends InlineMenu
             ]
         );
 
-        $bot->onCallbackQueryData('install', function(Nutgram $bot){
-            $bot->answerCallbackQuery([
-                'text' => 'Darslar tez kunda yuklanadi'
-            ]);
-        });
+        $bot->onCallbackQueryData('install', InstallClass::class);
 
-        $bot->onCallbackQueryData('laravel', function(Nutgram $bot){
-            $bot->answerCallbackQuery([
-                'text' => 'Darslar tez kunda yuklanadi'
-            ]);
-        });
+        $bot->onCallbackQueryData('laravel', LaravelClass::class);
     }
 }
