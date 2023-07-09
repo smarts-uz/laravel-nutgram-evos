@@ -11,8 +11,8 @@
 
 namespace App\Telegram\InlineMenu;
 
-use App\Telegram\InlineButtons\InstallClass;
-use App\Telegram\InlineButtons\LaravelClass;
+use App\Telegram\InlineButtons\Introduction\InstallClass;
+use App\Telegram\InlineButtons\Introduction\LaravelClass;
 use SergiX44\Nutgram\Conversations\InlineMenu;
 use SergiX44\Nutgram\Nutgram;
 use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardButton;

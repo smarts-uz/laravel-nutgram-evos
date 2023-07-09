@@ -9,18 +9,14 @@
  *
  */
 
-namespace App\Telegram\InlineButtons;
+namespace App\Telegram\InlineButtons\GettingUpdates;
 
-use SergiX44\Nutgram\Conversations\InlineMenu;
 use SergiX44\Nutgram\Nutgram;
-use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardButton;
-use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardMarkup;
 
-class LaravelClass
+class PollingClass
 {
     public function __invoke(Nutgram $bot):void
     {
-
         $bot->answerCallbackQuery([
             'text' => 'Darslar tez kunda yuklanadi'
         ]);

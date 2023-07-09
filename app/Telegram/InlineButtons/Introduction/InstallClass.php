@@ -9,12 +9,9 @@
  *
  */
 
-namespace App\Telegram\InlineButtons;
+namespace App\Telegram\InlineButtons\Introduction;
 
-use SergiX44\Nutgram\Conversations\InlineMenu;
 use SergiX44\Nutgram\Nutgram;
-use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardButton;
-use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardMarkup;
 
 class InstallClass
 {
