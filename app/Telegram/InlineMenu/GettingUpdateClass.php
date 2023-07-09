@@ -11,6 +11,10 @@
 
 namespace App\Telegram\InlineMenu;
 
+use App\Telegram\InlineButtons\GettingUpdates\CustomaizeClass;
+use App\Telegram\InlineButtons\GettingUpdates\PollingClass;
+use App\Telegram\InlineButtons\GettingUpdates\RetrievingUpdatesClass;
+use App\Telegram\InlineButtons\GettingUpdates\WebhookClass;
 use SergiX44\Nutgram\Conversations\InlineMenu;
 use SergiX44\Nutgram\Nutgram;
 use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardButton;
@@ -35,5 +39,10 @@ class GettingUpdateClass extends InlineMenu
 
                 )
         ]);
+
+        $bot->onCallbackQueryData('polling', PollingClass::class);
+        $bot->onCallbackQueryData('webhook', WebhookClass::class);
+        $bot->onCallbackQueryData('customization', CustomaizeClass::class);
+        $bot->onCallbackQueryData('updates', RetrievingUpdatesClass::class);
     }
 }

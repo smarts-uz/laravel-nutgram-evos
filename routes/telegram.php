@@ -2,7 +2,7 @@
 /** @var SergiX44\Nutgram\Nutgram $bot */
 
 use App\Telegram\Commands\Startsection;
-use App\Telegram\InlineButtons\InstallClass;
+use App\Telegram\InlineButtons\Introduction\InstallClass;
 use App\Telegram\InlineMenu\BulkMessengerClass;
 use App\Telegram\InlineMenu\ConversationClass;
 use App\Telegram\InlineMenu\ExtendClass;
@@ -15,7 +15,6 @@ use App\Telegram\InlineMenu\MiddlewareClass;
 use App\Telegram\InlineMenu\SendingRequestClass;
 use App\Telegram\MainClass\MainClass;
 use App\Telegram\Testing\TestingClass;
-use SergiX44\Nutgram\Nutgram;
 
 /*
 |--------------------------------------------------------------------------
