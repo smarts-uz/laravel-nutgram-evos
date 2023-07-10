@@ -12,6 +12,13 @@
 namespace App\Telegram\InlineMenu;
 
 
+use App\Telegram\InlineButtons\Handlers\AutomaticallyRegisterBotCommandsClass;
+use App\Telegram\InlineButtons\Handlers\AvailableHandlersClass;
+use App\Telegram\InlineButtons\Handlers\ConceptClass;
+use App\Telegram\InlineButtons\Handlers\HandlersPriorityClass;
+use App\Telegram\InlineButtons\Handlers\OOPClass;
+use App\Telegram\InlineButtons\Handlers\PersistingDataClass;
+use App\Telegram\InlineButtons\Handlers\SpecificSpecialHandlersClass;
 use SergiX44\Nutgram\Conversations\InlineMenu;
 use SergiX44\Nutgram\Nutgram;
 use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardButton;
@@ -42,5 +49,13 @@ class HandlerClass extends InlineMenu
                     InlineKeyboardButton::make('Chiqish', callback_data: 'chiqish'),
                 )
         ]);
+
+        $bot->onCallbackQueryData('concept', ConceptClass::class);
+        $bot->onCallbackQueryData('available', AvailableHandlersClass::class);
+        $bot->onCallbackQueryData('specific', SpecificSpecialHandlersClass::class);
+        $bot->onCallbackQueryData('priority', HandlersPriorityClass::class);
+        $bot->onCallbackQueryData('automatic', AutomaticallyRegisterBotCommandsClass::class);
+        $bot->onCallbackQueryData('oop', OOPClass::class);
+        $bot->onCallbackQueryData('persisting', PersistingDataClass::class);
     }
 }
