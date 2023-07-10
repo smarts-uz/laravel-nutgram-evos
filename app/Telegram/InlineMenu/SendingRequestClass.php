@@ -11,6 +11,10 @@
 
 namespace App\Telegram\InlineMenu;
 
+use App\Telegram\InlineButtons\SendingRequests\AvailableClass;
+use App\Telegram\InlineButtons\SendingRequests\DownloadingClass;
+use App\Telegram\InlineButtons\SendingRequests\FormattingClass;
+use App\Telegram\InlineButtons\SendingRequests\UploadingClass;
 use SergiX44\Nutgram\Conversations\InlineMenu;
 use SergiX44\Nutgram\Nutgram;
 use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardButton;
@@ -35,5 +39,10 @@ class SendingRequestClass extends InlineMenu
 
                 )
         ]);
+
+        $bot->onCallbackQueryData('uploading', UploadingClass::class);
+        $bot->onCallbackQueryData('downloading', DownloadingClass::class);
+        $bot->onCallbackQueryData('formatting', FormattingClass::class);
+        $bot->onCallbackQueryData('available', AvailableClass::class);
     }
 }
